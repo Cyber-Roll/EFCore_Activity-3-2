@@ -1,4 +1,5 @@
 ﻿using EFCore_DbLibrary;
+using InventoryHelpers;
 using InventoryModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -46,6 +47,9 @@ namespace EFCore_Activity0302
             using (var db = new InventoryDbContext(_optionsBuilder.Options))
             {
                 //determine if item exists:
+
+                string s = name.ToLower();
+                Item itemRoll = db.Items.FirstOrDefault();
                 var existingItem = db.Items.FirstOrDefault(x => x.Name.ToLower() == name.ToLower());
                 if (existingItem == null)
                 {

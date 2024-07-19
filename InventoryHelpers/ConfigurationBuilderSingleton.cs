@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace EFCore_Activity0302
+namespace InventoryHelpers
 {
     public sealed class ConfigurationBuilderSingleton
     {
